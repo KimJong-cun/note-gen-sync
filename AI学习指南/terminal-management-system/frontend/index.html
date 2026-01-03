@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能终端管理系统 - KimJong</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题栏 -->
+        <header class="header">
+            <h1>智能终端管理系统</h1>
+            <p class="copyright">版权所有: KimJong</p>
+        </header>
+
+        <!-- 连接配置区 -->
+        <section class="connection-panel">
+            <h2>WebSocket连接配置</h2>
+            <div class="config-form">
+                <div class="form-group">
+                    <label for="server-address">服务器地址:</label>
+                    <input type="text" id="server-address" placeholder="www.whl.ppli.top" value="www.whl.ppli.top">
+                </div>
+                <div class="form-group">
+                    <label for="server-port">端口:</label>
+                    <input type="number" id="server-port" placeholder="80" value="80">
+                    <small style="color: #666; margin-left: 10px;">留空或填80使用默认端口</small>
+                </div>
+                <div class="form-group">
+                    <button id="connect-btn" class="btn btn-primary">连接</button>
+                    <button id="disconnect-btn" class="btn btn-danger" disabled>断开</button>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">未连接</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 消息发送区 -->
+        <section class="message-panel">
+            <h2>消息发送</h2>
+            <div class="message-form">
+                <textarea id="message-input" placeholder="输入要发送的消息..." rows="4"></textarea>
+                <button id="send-btn" class="btn btn-success" disabled>发送消息</button>
+            </div>
+        </section>
+
+        <!-- 消息显示区 -->
+        <section class="log-panel">
+            <div class="log-header">
+                <h2>消息日志</h2>
+                <button id="clear-log-btn" class="btn btn-secondary">清空日志</button>
+            </div>
+            <div id="message-log" class="message-log"></div>
+        </section>
+
+        <!-- 连接信息 -->
+        <section class="info-panel">
+            <h2>连接信息</h2>
+            <div class="info-content">
+                <div class="info-item">
+                    <span class="info-label">当前连接:</span>
+                    <span id="current-connection">无</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">消息统计:</span>
+                    <span id="message-stats">发送: 0 | 接收: 0</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/websocket-client.js"></script>
+    <script src="js/ui-controller.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

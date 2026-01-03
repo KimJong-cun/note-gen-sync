@@ -1,0 +1,26 @@
+{
+  "name": "terminal-management-system",
+  "version": "1.0.0",
+  "description": "智能终端管理系统 - 基于WebSocket的前后端分离架构",
+  "main": "backend/app.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "dev": "node backend/app.js",
+    "ws-only": "node backend/server.js",
+    "http-only": "node backend/http-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "websocket",
+    "terminal",
+    "management",
+    "real-time"
+  ],
+  "author": "KimJong - Michu Electronics",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "ws": "^8.18.3"
+  }
+}
